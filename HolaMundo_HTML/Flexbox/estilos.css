@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    background-color: green;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    position: fixed;
+    z-index: 4;
+}
+
+h1{
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.menu{
+    width: 70%;
+    height: auto;
+    text-align: right;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.menu>a{
+    color: white;
+    text-decoration: none;
+    margin: 0px 10px;
+    font-size: 24px;
+    font-family: 'Teko', sans-serif;
+}
+
+.menu>a:hover{
+    font-size: 30px;
+    transition: font-size;
+    transition-duration: 0.3s;
+}
+
+.icono{
+    margin-left: 80px;
+}
+
+.video{
+    width: 100%;
+    height: 600px;
+}
+
+.video>iframe{
+    width: 100%;
+    height: 660px;
+}
