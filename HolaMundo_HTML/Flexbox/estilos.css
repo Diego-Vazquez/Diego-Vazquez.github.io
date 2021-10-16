@@ -225,6 +225,7 @@ footer>p{
     }
     
     h1{
+        width: 70%;
         color: white;
         margin-top: auto;
         margin-bottom: auto;
@@ -234,11 +235,11 @@ footer>p{
     
     .menu{
         width: 100%;
-        height: auto;
         text-align: right;
         padding-top: 20px;
         padding-right: 20px;
-        display: grid;
+        display: flex;
+        flex-direction: column;
     }
     
     .menu>a{
@@ -256,15 +257,16 @@ footer>p{
     }
     
     .icono{
-        margin-left: 1px;
+        margin-left: 5px;
         width: 60px;
         height: 60px;
-        margin-top: 40px;
+        margin-top: auto;
+        margin-bottom: auto;
     }
     
     .video{
         width: 100%;
-        height: 600px;
+        height: 670px;
         position: relative;
     }
     
@@ -317,9 +319,10 @@ footer>p{
     }
     
     #info{
-        width: 90%;
-        height: 600px;
+        width: 100%;
+        height: 750px;
         display: block;
+        overflow: hidden;
     }
     
     #info>img{
@@ -331,9 +334,14 @@ footer>p{
     }
     
     #info>div{
-        margin: auto;
+        width: 100%;
         text-align: justify;
         display: flex;
+        margin: auto;
+    }
+
+    #texto{
+        margin: 0px 20px;
     }
     
     #a{
@@ -351,7 +359,6 @@ footer>p{
         width: 100%;
         height: 700px;
         display: block;
-        margin-top: 150px;
         overflow: hidden;
     }
     
@@ -419,7 +426,6 @@ footer>p{
     }
     
     footer{
-        margin-top: 20px;
         background-color: gray;
         width: 100%;
         height: 50px;
