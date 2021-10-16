@@ -195,6 +195,11 @@ h1{
     height: 100px;
 }
 
+#formulario>iframe{
+    width: 600px;
+    height: 450px;
+}
+
 footer{
     background-color: gray;
     width: 100%;
@@ -206,4 +211,222 @@ footer{
 footer>p{
    padding-top: 150px;
     font-size: 36px;
+}
+
+
+@media screen and (max-width:800px){
+    header{
+        background-color: green;
+        width: 280px;
+        height: 150px;
+        display: flex;
+        position: fixed;
+        z-index: 4;
+    }
+    
+    h1{
+        color: white;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 1px;
+        font-family: 'Bebas Neue', cursive;
+    }
+    
+    .menu{
+        width: 280px;
+        height: auto;
+        text-align: right;
+        padding-top: 20px;
+        padding-right: 2px;
+    }
+    
+    .menu>a{
+        color: white;
+        text-decoration: none;
+        margin: 0px 10px;
+        font-size: 24px;
+        font-family: 'Teko', sans-serif;
+    }
+    
+    .menu>a:hover{
+        font-size: 30px;
+        transition: font-size;
+        transition-duration: 0.3s;
+    }
+    
+    .icono{
+        margin-left: 1px;
+        width: 60px;
+        height: 60px;
+        margin-top: 40px;
+    }
+    
+    .video{
+        width: 280px;
+        height: 600px;
+        position: relative;
+    }
+    
+    .video>iframe{
+        width: 280px;
+        height: 670px;
+    }
+    
+    .front{
+        position: absolute;
+        background-color: rgba(0,0,0,0.6);
+        width: 280px;
+        height: 670px;
+        color:white;
+        text-align: center;
+    }
+    
+    .front>h2{
+        margin-top: 300px;
+        font-size: 40px;
+        font-family: 'Bebas Neue', cursive;
+    }
+    
+    .front>h3{
+        font-size: 16px;
+    }
+    
+    .front>p{
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .front>a{
+        color: white;
+        text-decoration: none;
+        font-size: 30px;
+        font-family: 'Bebas Neue', cursive;
+        border-radius: 30px;
+        border: 1px solid white;
+        padding: 10px 20px;  
+    }
+    
+    .front>a:hover{
+        background-color: greenyellow;
+        font-size: 40px;
+        transition: background-color, font-size;
+        transition-duration: 0.2s,0.2s;
+        -o-transition-timing-function: ease;
+    }
+    
+    #info{
+        width: 280px;
+        height: 600px;
+        display: block;
+    }
+    
+    #info>img{
+        width: 200px;
+        margin-top: 90px;
+        margin-left: 40px;
+    }
+    
+    #info>div{
+        margin: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 30px;
+        text-align: justify;
+        display: flex;
+    }
+    
+    #a{
+        background-color: green;
+        color: white;
+        border: 3px solid black;
+        border-radius: 40px;
+        width: 16px;
+        height: 16px;
+        padding: 10px 10px;
+        margin-right: 10px;
+    }
+    
+    #formulario{
+        width: 280px;
+        height: 550px;
+        display: block;
+        margin-top: 200px;
+    }
+    
+    #formulario>div>h2{
+        font-family: 'Bebas Neue', cursive;
+        font-size: 48px;
+        margin-bottom: 10px; 
+        margin-left: auto;
+        margin-right: auto;  
+    }
+    
+    #formulario>div{
+        width: 280px;
+        height: 400px;
+        display: grid;
+        margin-left: 10px;
+    }
+    
+    #formulario>div>input{
+        margin: auto;
+        border: 2px solid gray;
+    }
+    
+    #formulario>div>input::placeholder{
+        padding-left: 20px;
+    }
+    
+    
+    #formulario>div>button{
+        width: 100px;
+        height: 40px;
+        background-color: green;
+        color: white;
+        border: none;
+        margin-left: auto;
+        margin-top: 20px;
+        margin-right: auto;
+    }
+    
+    #nombre{
+        width: 200px;
+        height: 25px;
+    }
+    
+    
+    #correo{
+        width: 200px;
+        height: 25px; 
+    }
+    
+    #asunto{
+        width: 200px;
+        height: 25px;
+    }
+    
+    #mensaje{
+        width: 200px;
+        height: 100px;
+    }
+
+    #formulario>iframe{
+        width: 280px;
+        height: 280px;
+    }
+    
+    footer{
+        margin-top: 200px;
+        background-color: gray;
+        width: 280px;
+        height: 50px;
+        text-align: center;
+        color: white;
+    }
+    
+    footer>p{
+       padding-top: 10px;
+        font-size: 18px;
+    }
 }
