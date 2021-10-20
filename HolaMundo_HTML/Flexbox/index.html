@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
@@ -21,7 +22,7 @@
         <nav class="menu">
             <a href="#">Inicio</a>
             <a href="#mi">Sobre Mi</a>
-            <a href="#">Portafolio</a>
+            <a href="#porta">Portafolio</a>
             <a href="#formulario">Contacto</a>
         </nav>
     </header>
@@ -41,7 +42,7 @@
             <p id="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga ad, deleniti modi ipsum sit quae quis sunt, nostrum, labore dignissimos magnam. Laudantium atque, saepe eius repellendus, ratione neque beatae possimus facilis omnis debitis eaque odio mollitia labore voluptates accusamus doloremque. Adipisci tenetur minus alias reprehenderit sed, dolores quas magnam accusantium itaque aspernatur iste quasi nemo tempore eveniet eligendi assumenda nostrum rem. Placeat vero iusto amet eligendi minus hic ratione vitae ullam consequatur repellendus? Nostrum porro animi molestiae, asperiores eos corrupti sed assumenda veniam corporis necessitatibus hic? Perspiciatis modi earum, quos odit necessitatibus maxime quibusdam voluptate. Dolores magnam exercitationem quo!</p>
         </div>
     </section>
-    <section class="portafoli">
+    <section id="porta" class="portafoli">
         <h2>Mis Proyectos</h2>
         <div id="port">
             <div>
@@ -80,23 +81,22 @@
     </section>
     <section id="formulario">
         <div>
-            <h2>Contactame</h2>
+            <h2 id="contac">Contactame</h2>
             <input type="text" name="Nombre" id="nombre" placeholder="Nombre">
             <input type="email" name="Correo" id="correo"
             placeholder="Correo">
             <input type="text" name="Asunto" id="asunto"
             placeholder="Asunto">
-            <input type="text" name="Mensaje" id="mensaje"
-            placeholder="Mensaje">
+            <textarea id="mensaje" placeholder="Mensaje"></textarea>
             <button type="submit">Enviar</button>
         </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110096.29669722643!2d-107.97420731030525!3d30.42166194060497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86dcacfc7db03c47%3A0x8f62172d59d7ed97!2sNuevo%20Casas%20Grandes%2C%20Chih.!5e0!3m2!1ses-419!2smx!4v1634348757535!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </section>
     <footer id="mi">
         <div>
-            <box-icon class="redes" name='facebook-circle' type='logo' color='#ffffff'></box-icon>
-            <box-icon class="redes" name='whatsapp-square' type='logo' color='#ffffff' ></box-icon>
-            <box-icon class="redes" name='twitter' type='logo' color='#ffffff' ></box-icon>
+            <box-icon class="redes" name='facebook-circle' type='logo' color='#ffffff' animation='tada'></box-icon>
+            <box-icon class="redes" name='whatsapp-square' type='logo' color='#ffffff' animation='tada'></box-icon>
+            <box-icon class="redes" name='twitter' type='logo' color='#ffffff' animation='tada'></box-icon>
         </div>
         <p>&copy;Diego</p>
     </footer>
