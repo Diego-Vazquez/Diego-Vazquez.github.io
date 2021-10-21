@@ -523,7 +523,7 @@ footer>div{
 .portafoli{
     width: 100%;
     height: 1000px;
-    background-color:black;
+    background-color:crimson;
     display: grid;
     overflow: hidden;
     z-index: -100;
@@ -535,7 +535,6 @@ footer>div{
     margin-left: auto;
     margin-right: auto;
     font-size: 30px;
-    position: relative;
 }
 
 #port{
