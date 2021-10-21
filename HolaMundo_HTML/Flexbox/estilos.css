@@ -422,7 +422,9 @@ footer>div{
     }
 
     #texto{
-        margin: 0px 20px;
+        margin-left: 10px;
+        margin-right: 20px;
+        margin-bottom: 20px;
     }
     
     #a{
