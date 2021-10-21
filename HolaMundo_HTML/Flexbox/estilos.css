@@ -401,7 +401,7 @@ footer>div{
     
     #info{
         width: 100%;
-        height: 750px;
+        height: 850px;
         display: block;
         overflow: hidden;
     }
@@ -424,7 +424,6 @@ footer>div{
     #texto{
         margin-left: 10px;
         margin-right: 20px;
-        margin-bottom: 20px;
     }
     
     #a{
