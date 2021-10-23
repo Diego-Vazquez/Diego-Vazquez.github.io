@@ -22,7 +22,7 @@ body{
 
 header{
     height: 100vh;
-    background-image: linear-gradient(to top, #30d0d0e5 0%, #330867b4 100%),url("/Fondos/600528.png");
+    background-image: linear-gradient(to top, #30d0d0e5 0%, #330867b4 100%),url("../Fondos/600528.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
