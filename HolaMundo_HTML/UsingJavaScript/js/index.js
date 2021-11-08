@@ -27,7 +27,7 @@ window.onload = () => {
             {
                 "id":3,
                 "nombre":"vivi",
-                "imagen":"viv.jpg",
+                "imagen":"vivi.jpg",
                 "username":"vivi",
                 "password":"1234"
             }
