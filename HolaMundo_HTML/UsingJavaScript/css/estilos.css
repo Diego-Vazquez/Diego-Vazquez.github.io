@@ -179,3 +179,7 @@ main{
 .post .textTweet{
  padding-top: 10px;
 }
+
+#subpost{
+    margin-left: 80px;
+}
