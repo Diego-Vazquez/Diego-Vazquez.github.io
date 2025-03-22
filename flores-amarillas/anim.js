@@ -64,8 +64,8 @@ const dom = {
     };
 
     // load lrc file
-    const res = await fetch("./lyric.lrc");
-    const lrc = await res.text();
+    const res = fetch("./lyric.lrc");
+    const lrc = res.text();
 
     const lyrics = parseLyric(lrc);
 
