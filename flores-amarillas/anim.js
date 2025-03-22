@@ -1,81 +1,86 @@
-// Sincronizar las letras con la canción
-var audio = document.querySelector("audio");
-var lyrics = document.querySelector("#lyrics");
-
-// Array de objetos que contiene cada línea y su tiempo de aparición en segundos
-var lyricsData = [
-  { text: "Voy a empezar con tu sonrrisa", time: 13 },
-  { text: "Fue lo primero que me cautivo", time: 18 },
-  { text: "y seguir con tu mirada", time: 19 },
-  { text: "Fell from the sky", time: 32 },
-  { text: "Like water drops", time: 33 },
-  { text: "Where I'm now? I don't know why", time: 41 },
-  { text: "Nice butterflies in my hands", time: 47 },
-  { text: "Too much light for twilight", time: 54 },
-  { text: "In the mood for the flowers love", time: 59 },
-  { text: "That vision", time: 67 },
-  { text: "Really strong, blew my mind", time: 72 },
-  { text: "Silence Let me see what it was", time: 78 },
-  { text: "I only want to live in clouds", time: 83 },
-  { text: "Where I'm now? I don't know why", time: 91 },
-  { text: "Nice butterflies in my hands", time: 97 },
-  { text: "Too much light for twilight", time: 104 },
-  { text: "In the mood for the flowers love", time: 108 },
-  { text: "At the time", time: 144 },
-  { text: "The whisper of birds", time: 148 },
-  { text: "Lonely before the sun cried", time: 153 },
-  { text: "Fell from the sky", time: 158 },
-  { text: "Like water drops", time: 164 },
-  { text: "Where I'm now? I don't know why", time: 169 },
-  { text: "Nice butterflies in my hands", time: 176 },
-  { text: "Too much light for twilight", time: 183 },
-  { text: "In the mood for the flowers", time: 188 },
-  { text: "Love.", time: 140 },
-];
-
 // Animar las letras
-function updateLyrics() {
-  var time = Math.floor(audio.currentTime);
-  
-  var currentLine = lyricsData.find(
-    (line) => time >= line.time && time < line.time + 6
-  );
+function syncLyric(lyrics, time) {
+    const scores = [];
 
-  if (currentLine) {
-    // Calcula la opacidad basada en el tiempo en la línea actual
-    var fadeInDuration = 0.1; // Duración del efecto de aparición en segundos
-    var opacity = Math.min(1, (time - currentLine.time) / fadeInDuration);
+    lyrics.forEach(lyric => {
+        // get the gap or distance or we call it score
+        const score = time - lyric.time;
 
-    // Aplica el efecto de aparición
-    lyrics.style.opacity = opacity;
-    lyrics.innerHTML = currentLine.text + "(" + time + ")";
-  } else {
-    // Restablece la opacidad y el contenido si no hay una línea actual
-    lyrics.style.opacity = 0;
-    lyrics.innerHTML = "";
-  }
+        // only accept score with positive values
+        if (score >= 0) scores.push(score);
+    });
+
+    if (scores.length == 0) return null;
+
+    // get the smallest value from scores
+    const closest = Math.min(...scores);
+
+    // return the index of closest lyric
+    return scores.indexOf(closest);
 }
 
-function syncLyrics() {
-  updateLyrics();
-  syncLyrics(); // Llamar recursivamente para continuar sincronizando
+// lrc (String) - lrc file text
+function parseLyric(lrc) {
+    // will match "[00:00.00] ooooh yeah!"
+    // note: i use named capturing group
+    const regex = /^\[(?<time>\d{2}:\d{2}(.\d{2})?)\](?<text>.*)/;
+
+    // split lrc string to individual lines
+    const lines = lrc.split("\n");
+
+    const output = [];
+
+    lines.forEach(line => {
+        const match = line.match(regex);
+
+        // if doesn't match, return.
+        if (match == null) return;
+
+        const { time, text } = match.groups;
+
+        output.push({
+            time: parseTime(time),
+            text: text.trim()
+        });
+    });
+
+    // parse formated time
+    // "03:24.73" => 204.73 (total time in seconds)
+    function parseTime(time) {
+        const minsec = time.split(":");
+
+        const min = parseInt(minsec[0]) * 60;
+        const sec = parseFloat(minsec[1]);
+
+        return min + sec;
+    }
+
+    return output;
 }
 
-audio.addEventListener('play', function(){
-  console.log("reproduciendo");
-  syncLyrics();
-});
+!async function main() {
+    "use strict";
 
-//funcion titulo
-// Función para ocultar el título después de 216 segundos
-function ocultarTitulo() {
-  var titulo = document.querySelector(".titulo");
-  titulo.style.animation =
-    "fadeOut 3s ease-in-out forwards"; /* Duración y función de temporización de la desaparición */
-  setTimeout(function () {
-    titulo.style.display = "none";
-  }, 3000); // Espera 3 segundos antes de ocultar completamente
-}
+    const dom = {
+        lyric: document.querySelector("#lyrics"),
+        player: document.querySelector("player")
+    };
 
-// Llama a la función después de 216 segundos (216,000 milisegundos)
-setTimeout(ocultarTitulo, 216000);
+    // load lrc file
+    const res = await fetch("./lyric.lrc");
+    const lrc = await res.text();
+
+    const lyrics = parseLyric(lrc);
+
+    dom.player.src = "./sound/Una_canción_hermosa.mp3";
+
+    dom.player.ontimeupdate = () => {
+        const time = dom.player.currentTime;
+        const index = syncLyric(lyrics, time);
+
+        if (index == null) return;
+
+        dom.lyric.innerHTML = lyrics[index].text;
+    };
+
+}();
