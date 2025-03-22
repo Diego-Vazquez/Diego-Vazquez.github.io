@@ -36,6 +36,8 @@ var lyricsData = [
 // Animar las letras
 function updateLyrics() {
   var time = Math.floor(audio.currentTime);
+  lyrics.innerHTML = time;
+  return;
   var currentLine = lyricsData.find(
     (line) => time >= line.time && time < line.time + 6
   );
