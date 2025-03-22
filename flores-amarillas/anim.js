@@ -58,10 +58,7 @@ function parseLyric(lrc) {
     return output;
 }
 
-!async function main() {
-    "use strict";
-
-    const dom = {
+const dom = {
         lyric: document.querySelector("#lyrics"),
         player: document.querySelector("player")
     };
@@ -82,5 +79,3 @@ function parseLyric(lrc) {
 
         dom.lyric.innerHTML = lyrics[index].text;
     };
-
-}();
