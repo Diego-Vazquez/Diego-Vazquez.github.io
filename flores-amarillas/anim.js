@@ -48,7 +48,7 @@ function updateLyrics() {
 
     // Aplica el efecto de aparición
     lyrics.style.opacity = opacity;
-    lyrics.innerHTML = currentLine.text;
+    lyrics.innerHTML = currentLine.text + "(" + time + ")";
   } else {
     // Restablece la opacidad y el contenido si no hay una línea actual
     lyrics.style.opacity = 0;
