@@ -4,12 +4,12 @@ var lyrics = document.querySelector("#lyrics");
 
 // Array de objetos que contiene cada línea y su tiempo de aparición en segundos
 var lyricsData = [
-  { text: "Voy a empezar con tu sonrisa", time: 10 },
-  { text: "Fue lo primero que me cautivo", time: 17 },
-  { text: "y seguir con tu mirada", time: 20 },
-  { text: "mirada que me derritio", time: 25 },
-  { text: "continuare con esos ojos", time: 27 },
-  { text: "que me hicieron creer que todavia no existe", time: 32 },
+  { text: "At the time", time: 15 },
+  { text: "The whisper of birds", time: 18 },
+  { text: "Lonely before the sun cried", time: 27 },
+  { text: "Fell from the sky", time: 32 },
+  { text: "Like water drops", time: 33 },
+  { text: "Where I'm now? I don't know why", time: 41 },
   { text: "Nice butterflies in my hands", time: 47 },
   { text: "Too much light for twilight", time: 54 },
   { text: "In the mood for the flowers love", time: 59 },
@@ -55,7 +55,10 @@ function updateLyrics() {
   }
 }
 
-setInterval(updateLyrics, 1000);
+audio.addEventListener('play', function(){
+  console.log("reproduciendo");
+  setInterval(updateLyrics, 1000);
+});
 
 //funcion titulo
 // Función para ocultar el título después de 216 segundos
