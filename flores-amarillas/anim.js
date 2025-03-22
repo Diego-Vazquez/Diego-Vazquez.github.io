@@ -58,7 +58,7 @@ function updateLyrics() {
 
 function syncLyrics() {
   updateLyrics();
-  requestAnimationFrame(syncLyrics); // Llamar recursivamente para continuar sincronizando
+  syncLyrics(); // Llamar recursivamente para continuar sincronizando
 }
 
 audio.addEventListener('play', function(){
