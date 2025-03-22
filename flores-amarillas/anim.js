@@ -64,7 +64,7 @@ function parseLyric(lrc) {
 
     const dom = {
         lyric: document.querySelector("#lyrics"),
-        player: document.querySelector("player")
+        player: document.querySelector("audio")
     };
 
     // load lrc file
