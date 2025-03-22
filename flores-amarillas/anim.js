@@ -56,9 +56,14 @@ function updateLyrics() {
   }
 }
 
+function syncLyrics() {
+  updateLyrics();
+  requestAnimationFrame(syncLyrics); // Llamar recursivamente para continuar sincronizando
+}
+
 audio.addEventListener('play', function(){
   console.log("reproduciendo");
-  setInterval(updateLyrics, 1000);
+  syncLyrics();
 });
 
 //funcion titulo
