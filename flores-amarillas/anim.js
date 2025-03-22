@@ -72,7 +72,7 @@ function parseLyric(lrc) {
 
     const lyrics = parseLyric(lrc);
 
-    dom.player.src = "./sound/Una_canción_hermosa.mp3";
+    //dom.player.src = "./sound/Una_canción_hermosa.mp3";
 
     dom.player.ontimeupdate = () => {
         const time = dom.player.currentTime;
