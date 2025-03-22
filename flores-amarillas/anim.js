@@ -4,7 +4,7 @@ var lyrics = document.querySelector("#lyrics");
 
 // Array de objetos que contiene cada línea y su tiempo de aparición en segundos
 var lyricsData = [
-  { text: "Voy a empezar con tu sonrisa", time: 15 },
+  { text: "Voy a empezar con tu sonrisa", time: 10 },
   { text: "Fue lo primero que me cautivo", time: 17 },
   { text: "y seguir con tu mirada", time: 20 },
   { text: "mirada que me derritio", time: 25 },
@@ -36,9 +36,8 @@ var lyricsData = [
 // Animar las letras
 function updateLyrics() {
   var time = Math.floor(audio.currentTime);
-  console.log(time);
   var currentLine = lyricsData.find(
-    (line) => time >= line.time && time < line.time + 1
+    (line) => time >= line.time && time < line.time + 6
   );
 
   if (currentLine) {
