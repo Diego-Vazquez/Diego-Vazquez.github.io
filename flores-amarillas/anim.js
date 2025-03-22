@@ -58,18 +58,22 @@ function parseLyric(lrc) {
     return output;
 }
 
-const dom = {
+
+!async function main() {
+    "use strict";
+
+    const dom = {
         lyric: document.querySelector("#lyrics"),
         player: document.querySelector("player")
     };
 
     // load lrc file
-    const res = fetch("./lyric.lrc");
-    const lrc = res.text();
+    const res = await fetch("./lyric.lrc");
+    const lrc = await res.text();
 
     const lyrics = parseLyric(lrc);
 
-    //dom.player.src = "./sound/Una_canción_hermosa.mp3";
+    //dom.player.src = "./audio.mp3";
 
     dom.player.ontimeupdate = () => {
         const time = dom.player.currentTime;
@@ -79,3 +83,5 @@ const dom = {
 
         dom.lyric.innerHTML = lyrics[index].text;
     };
+
+}();
