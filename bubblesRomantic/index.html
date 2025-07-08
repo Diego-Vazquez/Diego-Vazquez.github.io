@@ -1,37 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Te amo ❤️</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Botón Bonito y Responsivo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #1d3557, #457b9d);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .button-container {
+      text-align: center;
+    }
+
+    .fancy-button {
+      background: linear-gradient(45deg, #f72585, #7209b7);
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .fancy-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 600px) {
+      .fancy-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="message" id="diasContador"></div>
-    <div id="bubbles-text"></div>
-    <audio autoplay loop>
-        <source src="digi.mp3" type="audio/mp3">
-        Tu navegador no soporta el audio HTML5.
-    </audio>
-    <script src="script.js"></script>
-    <script>
-        // Cambia esta fecha por la que desees (formato: año, mes (0-11), día)
-        const fechaConocimos = new Date(2024, 9, 7);
 
-        const hoy = new Date();
+  <div class="button-container">
+    <a href="index-real.html" class="fancy-button">Haz click aqui</a>
+  </div>
 
-        // Convertimos las fechas a milisegundos y calculamos la diferencia
-        const diferenciaTiempo = hoy - fechaConocimos;
-
-        // Convertimos la diferencia de milisegundos a días
-        const diasPasados = Math.floor(diferenciaTiempo / (1000 * 60 * 60 * 24));
-
-        // Mostramos el resultado en la página
-        document.getElementById("diasContador").innerText =
-            `Han pasado ${diasPasados} días desde que te conocí. ❤️07/09/2024`;
-    </script>
 </body>
-
 </html>
